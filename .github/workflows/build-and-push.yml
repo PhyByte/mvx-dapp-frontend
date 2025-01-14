@@ -29,9 +29,9 @@ jobs:
       - name: Set environment variables
         run: |
           if [[ "${{ github.ref_name }}" == "main" ]]; then
-            cp env.mainnet .env
+            cp .env.mainnet .env
           else
-            cp env.devnet .env
+            cp .env.devnet .env
           fi
 
       - name: Build frontend
