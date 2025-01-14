@@ -24,7 +24,7 @@ const BaseModal = ({
   title,
   isOpen,
   setIsOpen,
-  size,
+  size = { base: "full", md: "4xl" },
   ontop = false,
   children,
   ...rest
@@ -41,12 +41,12 @@ const BaseModal = ({
       <ModalContent>
         <ModalHeader>
           <Flex align={"center"} justify="center" mb="2">
-            {typeof title === "string" ? <chakra.h2>{title}</chakra.h2> : title}
+            {typeof title === "string" ? <chakra.h1>{title}</chakra.h1> : title}
           </Flex>
           <Divider orientation="horizontal" />
         </ModalHeader>
         <ModalCloseButton />
-        <ModalBody m="3">{children}</ModalBody>
+        <ModalBody >{children}</ModalBody>
       </ModalContent>
     </Modal>
   );

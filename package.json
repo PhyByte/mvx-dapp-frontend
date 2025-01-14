@@ -1,6 +1,10 @@
 {
   "name": "mvx-dapp-frontend",
-  "private": true,
+  "author": {
+    "name": "Philippe Martin (Phybyte)",
+    "email": "philippe@cryptobay.space"
+  },
+  "license": "MIT",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

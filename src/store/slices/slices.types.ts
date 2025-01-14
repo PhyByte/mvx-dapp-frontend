@@ -1,6 +1,11 @@
 export interface UserSlice {
   user: {
+    updateState: (path: Array<string>, value: any) => void;
+    refresh: (signature?: string) => void;
+    reset: () => void;
     auth: {
+      reset: () => void;
+      refresh: () => void;
       authToken: {
         value: string;
         expirationDate: Date;
@@ -9,6 +14,11 @@ export interface UserSlice {
         value: string;
         expirationDate: Date;
       };
+      verifySignature: (
+        address: string,
+        signature: string,
+        authToken: string,
+      ) => void;
     };
   };
 }
@@ -17,8 +27,12 @@ export interface UxSlice {
   ux: {
     updateState: (path: Array<string>, value: any) => void;
     loginModal: {
-      loginModalIsOpen: boolean;
-      setLoginModalIsOpen: (isOpen: boolean) => void;
+      isOpen: boolean;
+      setIsOpen: (isOpen: boolean) => void;
+    };
+    sendTokenModal: {
+      isOpen: boolean;
+      setIsOpen: (value: boolean) => void;
     };
   };
 }

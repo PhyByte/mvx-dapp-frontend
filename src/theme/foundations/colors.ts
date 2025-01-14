@@ -4,6 +4,12 @@ const colors = {
   black: "#000000",
   white: "#FFFFFF",
 
+  brand: {
+    light: "#10cdf4",
+    main: "#9182ce",
+    dark: "#2c5282",
+  },
+
   whiteAlpha: {
     50: "rgba(255, 255, 255, 0.04)",
     100: "rgba(255, 255, 255, 0.06)",
@@ -159,6 +165,6 @@ const colors = {
     800: "#702459",
     900: "#521B41",
   },
-}
+};
 
-export default colors
+export default colors;

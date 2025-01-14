@@ -2,13 +2,13 @@ import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system";
 import { mode, transparentize } from "@chakra-ui/theme-tools";
 import { runIfFn } from "../utils/run-if-fn";
 
-const baseStyle = defineStyle({
+const baseStyle = defineStyle((props) => ({
   lineHeight: "1.2",
-  p:'1',
+  p: "2",
   borderRadius: "md",
   fontWeight: "semibold",
-  color: "gray.800", // Default text color
-  bg: "gray.200", // Default background color
+  color: mode("black", "white")(props), // Default text color
+  bg: "brand.main", // Default background color
   transitionProperty: "common",
   transitionDuration: "normal",
   _focusVisible: {
@@ -21,43 +21,43 @@ const baseStyle = defineStyle({
     boxShadow: "none",
   },
   _hover: {
-    bg: "gray.300", // Slightly darker background on hover
+    bg: "brand.light", // Slightly darker background on hover
     _disabled: {
-      bg: "gray.100", // Prevent hover effects when disabled
+      bg: "brand.dark", // Prevent hover effects when disabled
     },
   },
   _active: {
     bg: "gray.400", // Darker background for active state
   },
-});
+}));
 
 const variantAction = defineStyle((props) => ({
-  bg: mode('green.200', 'green.500')(props),
-  p: '2',
-  color: mode('black', 'white')(props),
-  borderRadius: 'xl',
-  borderColor: mode('green.300', 'green.600')(props),
+  bg: mode("green.200", "green.500")(props),
+  p: "2",
+  color: mode("black", "white")(props),
+  borderRadius: "xl",
+  borderColor: mode("green.300", "green.600")(props),
   _hover: {
-    bg: mode('green.300', 'green.600')(props),
+    bg: mode("green.300", "green.600")(props),
   },
   _active: {
-    bg: mode('green.400', 'green.700')(props),
+    bg: mode("green.400", "green.700")(props),
   },
-  boxShadow: 'greenStrongGlow',
+  boxShadow: "greenStrongGlow",
 }));
 const variantDelete = defineStyle((props) => ({
-  bg: mode('red.200', 'red.500')(props),
-  p: '2',
-  color: mode('black', 'white')(props),
-  borderRadius: 'xl',
-  borderColor: mode('red.300', 'red.600')(props),
+  bg: mode("red.200", "red.500")(props),
+  p: "2",
+  color: mode("black", "white")(props),
+  borderRadius: "xl",
+  borderColor: mode("red.300", "red.600")(props),
   _hover: {
-    bg: mode('red.300', 'red.600')(props),
+    bg: mode("red.300", "red.600")(props),
   },
   _active: {
-    bg: mode('red.400', 'red.700')(props),
+    bg: mode("red.400", "red.700")(props),
   },
-  boxShadow: 'redStrongGlow',
+  boxShadow: "redStrongGlow",
 }));
 
 const variantGhost = defineStyle((props) => {

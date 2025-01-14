@@ -1,4 +1,3 @@
-import ColorModeSwitch from "@/components/switches/ColorModeSwitch";
 import useDappStore from "@/store";
 import { Button, Flex, FlexProps, Heading, Spacer } from "@chakra-ui/react";
 import { getIsLoggedIn, logout } from "@multiversx/sdk-dapp/utils";
@@ -33,12 +32,12 @@ const TopBar = ({ ...rest }: TopBarProps) => {
         textAlign={"center"}
         gap="2"
       >
-        <Heading size={{ base: "md", lg: "4xl" }}>Dapp Template</Heading>
+        <Heading size={{ base: "xl", lg: "3xl" }}>Dapp Template</Heading>
       </Flex>
       <Spacer />
       {!isLogged ? (
         <Button
-          onClick={() => loginModal.setLoginModalIsOpen(true)}
+          onClick={() => loginModal.setIsOpen(true)}
           variant="action"
           w="20%"
         >
