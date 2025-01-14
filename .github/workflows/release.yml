@@ -26,6 +26,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Set environment variables
+        run: |
+          if [[ "${{ github.ref_name }}" == "main" ]]; then
+            cp env.mainnet .env
+          else
+            cp env.devnet .env
+          fi
+
       - name: Build frontend
         run: npm run build
 
