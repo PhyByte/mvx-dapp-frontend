@@ -1,18 +1,18 @@
-name: Create Release
+name: Build and Deploy Frontend
 
 on:
-  workflow_dispatch:
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - main
+      - develop
 
 permissions:
   packages: write
-  contents: write
+  contents: read
 
 jobs:
-  release:
-    name: Build and Push Versioned Release
+  build-and-push:
+    name: Build and Push Docker Image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -29,9 +29,9 @@ jobs:
       - name: Set environment variables
         run: |
           if [[ "${{ github.ref_name }}" == "main" ]]; then
-            cp env.mainnet .env
+            cp .env.mainnet .env
           else
-            cp env.devnet .env
+            cp .env.devnet .env
           fi
 
       - name: Build frontend
@@ -42,8 +42,10 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build . --file Dockerfile --tag ghcr.io/phybyte/mvx-dapp-frontend:${{ github.ref_name }}
+          IMAGE_TAG=${{ github.ref_name == 'main' && 'mainnet' || 'devnet' }}
+          docker build . --file Dockerfile --tag ghcr.io/phybyte/mvx-dapp-frontend:$IMAGE_TAG
 
       - name: Push Docker image
         run: |
-          docker push ghcr.io/phybyte/mvx-dapp-frontend:${{ github.ref_name }}
+          IMAGE_TAG=${{ github.ref_name == 'main' && 'mainnet' || 'devnet' }}
+          docker push ghcr.io/phybyte/mvx-dapp-frontend:$IMAGE_TAG
