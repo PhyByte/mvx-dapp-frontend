@@ -1,15 +1,12 @@
-// import DelegateModal from './Delegate/DelegateModal';
-// import EgldWrappperModal from './EgldWrappperModal/EgldWrappperModal';
-// import SendTokenModal from './SendToken/SendTokenModal';
-// import SwapTokensModal from './SwapTokens/SwapTokensModal';
-// import TaskModal from './TaskModal/TaskModal';
+import SendTokenModal from "./SendTokenModal.tsx/SendTokenModal";
 
 const DappModals = () => {
   return (
     <>
+      <SendTokenModal />
+      {/* <LoginModal /> */}
       {/* <TaskModal />
       <EgldWrappperModal />
-      <SendTokenModal />
       <DelegateModal />
       <SwapTokensModal /> */}
     </>
