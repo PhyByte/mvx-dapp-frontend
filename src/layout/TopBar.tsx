@@ -1,5 +1,6 @@
 import useDappStore from "@/store";
-import { Button, Flex, FlexProps, Heading, Spacer } from "@chakra-ui/react";
+import { LogoIconFull } from "@/utils/assets/LogoIconFull";
+import { Button, Flex, FlexProps, Spacer } from "@chakra-ui/react";
 import { getIsLoggedIn, logout } from "@multiversx/sdk-dapp/utils";
 
 export const SIDEBAR = {
@@ -25,15 +26,7 @@ const TopBar = ({ ...rest }: TopBarProps) => {
       borderBottomWidth="2px"
       {...rest}
     >
-      <Flex
-        my="2"
-        justify={"center"}
-        align={"center"}
-        textAlign={"center"}
-        gap="2"
-      >
-        <Heading size={{ base: "xl", lg: "3xl" }}>Dapp Template</Heading>
-      </Flex>
+      <LogoIconFull boxSize={12} />
       <Spacer />
       {!isLogged ? (
         <Button
