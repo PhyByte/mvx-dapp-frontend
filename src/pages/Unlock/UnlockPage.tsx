@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonExample from "./components/ButtonExample";
 import TextExample from "./components/TextExample";
+import ColorsExample from "./components/ColorsExample";
 
 const UnlockPage = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const UnlockPage = () => {
       w="100%"
       gap={4}
     >
+      <ColorsExample/>
       <TextExample />
       <LoginModal />
       <ButtonExample />

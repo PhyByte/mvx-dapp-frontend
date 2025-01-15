@@ -6,13 +6,12 @@ const TextExample = () => {
     <BasePageElement>
       <Heading>Text component</Heading>
 
-      <Flex align="center" gap={"10"}>
+      <Flex align="center" gap={3} direction="column">
         <Flex gap={3} align="center" justify="center" direction="column">
           <chakra.h1>chakra.h1</chakra.h1>
           <chakra.h2>chakra.h2</chakra.h2>
           <chakra.h3>chakra.h3</chakra.h3>
         </Flex>
-        <Spacer />
         <Flex gap={3} align="center" justify="center" direction="column">
           <chakra.h4>chakra.h4</chakra.h4> <chakra.p>chakra.p</chakra.p>
           <chakra.body>chakra.body</chakra.body>
