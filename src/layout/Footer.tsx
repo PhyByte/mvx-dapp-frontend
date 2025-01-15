@@ -14,7 +14,7 @@ const Footer = () => (
     width="100%"
     zIndex="1000"
   >
-    <Spacer/>
+    <Spacer />
     <Box>
       Made with{' '}
       <span role="img" aria-label="heart">
@@ -24,16 +24,15 @@ const Footer = () => (
       <Link
         href="https://linktr.ee/phybyte"
         target="_blank"
-        as='b'
-        rel="noopener noreferrer"
+        isExternal
+        fontWeight="bold"
         _hover={{ textDecor: 'underline' }}
       >
         Phybyte
       </Link>
     </Box>
-
-          <Spacer />
-          <ColorModeSwitch />
+    <Spacer />
+    <ColorModeSwitch />
   </Flex>
 );
 
